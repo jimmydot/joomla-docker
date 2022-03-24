@@ -14,7 +14,7 @@
 # limitations under the License.
 # [START cloudrun_fs_script]
 #!/usr/bin/env bash
-set -eo pipefail
+#set -eo pipefail
 
 env
 echo "Mounting: $FILESTORE_IP_ADDRESS:/$FILE_SHARE_NAME $MNT_DIR"
@@ -22,5 +22,5 @@ echo "Mounting: $FILESTORE_IP_ADDRESS:/$FILE_SHARE_NAME $MNT_DIR"
 mkdir -p $MNT_DIR
 
 echo "Mounting Cloud Filestore."
-mount -o nolock $FILESTORE_IP_ADDRESS:/$FILE_SHARE_NAME $MNT_DIR -vvv
+mount -o nolock,vers=3 $FILESTORE_IP_ADDRESS:/$FILE_SHARE_NAME $MNT_DIR -vvv
 echo "Mounting completed."
