@@ -122,7 +122,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
         # Ensure the MySQL Database is created
         # php /makedb.php "$JOOMLA_DB_HOST" "$JOOMLA_DB_USER" "$JOOMLA_DB_PASSWORD" "$JOOMLA_DB_NAME"
         
-        if [ "$MNT_DIR" !== "" ]; then
+        if [ "$MNT_DIR" != "" ]; then
                 bash /mount.sh
         fi
         
