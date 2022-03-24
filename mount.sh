@@ -22,5 +22,5 @@ echo "Mounting: $FILESTORE_IP_ADDRESS:/$FILE_SHARE_NAME $MNT_DIR"
 mkdir -p $MNT_DIR
 
 echo "Mounting Cloud Filestore."
-mount -o nolock $FILESTORE_IP_ADDRESS:/$FILE_SHARE_NAME $MNT_DIR
+mount -o nolock $FILESTORE_IP_ADDRESS:/$FILE_SHARE_NAME $MNT_DIR -vvv
 echo "Mounting completed."
