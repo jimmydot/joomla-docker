@@ -5,6 +5,11 @@ if [ -n "$JOOMLA_DB_PASSWORD_FILE" ] && [ -f "$JOOMLA_DB_PASSWORD_FILE" ]; then
         JOOMLA_DB_PASSWORD=$(cat "$JOOMLA_DB_PASSWORD_FILE")
 fi
 
+if [ "$MNT_DIR" != "" ]; then
+                bash /mount.sh
+fi
+        
+
 if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
         uid="$(id -u)"
         gid="$(id -g)"
@@ -122,10 +127,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
         # Ensure the MySQL Database is created
         # php /makedb.php "$JOOMLA_DB_HOST" "$JOOMLA_DB_USER" "$JOOMLA_DB_PASSWORD" "$JOOMLA_DB_NAME"
         
-        if [ "$MNT_DIR" != "" ]; then
-                bash /mount.sh
-        fi
-        
+         
 
         echo >&2 "========================================================================"
         echo >&2
