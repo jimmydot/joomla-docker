@@ -73,6 +73,11 @@ RUN set -ex; \
 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
 	rm -rf /var/lib/apt/lists/*
 
+RUN apt update -y && apt install -y \
+    tini \
+    nfs-common \
+    && apt clean
+
 VOLUME /var/www/html
 
 # Define Joomla version and expected SHA512 signature
