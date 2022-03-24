@@ -16,6 +16,8 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
+env
+echo "Mounting: $FILESTORE_IP_ADDRESS:/$FILE_SHARE_NAME $MNT_DIR"
 # Create mount directory for service.
 mkdir -p $MNT_DIR
 
